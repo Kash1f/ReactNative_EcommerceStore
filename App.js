@@ -3,9 +3,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import HomeScreen from "./screens/HomeScreen";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { MaterialIcons } from '@expo/vector-icons';
-
+import { FontAwesome6 } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
@@ -13,12 +12,16 @@ const Tab = createBottomTabNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator screenOptions={{headerShown: false, tabBarShowLabel: false}}>
+      <Tab.Navigator 
+      screenOptions={{
+        headerShown: false, 
+        tabBarShowLabel: false,
+        tabBarActiveTintColor: "#E98E6E"
+        }}>
         <Tab.Screen
           name="HOME"
           component={HomeScreen}
           options={{
-            tabBarLabel: "HOME",
             tabBarIcon: ({ color, size }) => (
               <MaterialIcons name="home-filled" size={size} color={color} />
             ),
@@ -28,7 +31,6 @@ function App() {
           name="REORDER"
           component={HomeScreen}
           options={{
-            tabBarLabel: "REORDER",
             tabBarIcon: ({ color, size }) => (
               <MaterialIcons name="reorder" size={size} color={color} />
             ),
@@ -38,7 +40,6 @@ function App() {
           name="CART"
           component={HomeScreen}
           options={{
-            tabBarLabel: "CART",
             tabBarIcon: ({ color, size }) => (
               <FontAwesome name="shopping-cart" size={size} color={color} />
             ),
@@ -48,13 +49,8 @@ function App() {
           name="ACCOUNT"
           component={HomeScreen}
           options={{
-            tabBarLabel: "ACCOUNT",
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons
-                name="account-circle"
-                size={size}
-                color={color}
-              />
+            tabBarIcon: ({ color }) => (
+              <FontAwesome6 name="user-large" size={22} color={color}/>
             ),
           }}
         />
