@@ -1,11 +1,15 @@
 import * as React from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { FlatList, StyleSheet, Text, TextInput, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Header from "../components/Header";
 import { EvilIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
+import Categories from "../components/Categories";
 
 export default function App() {
+
+ 
+
   return (
 
     // Background Linear Gradient
@@ -16,22 +20,31 @@ export default function App() {
 
       {/* Search Box */}
 
+      {/* main view container  */}
       <View style={styles.inputContainer}>
       <AntDesign style={styles.icon} name="search1" size={24} color="#C0C0C0" />
       <TextInput placeholder="Search" style={styles.searchBox}/>
-      </View>
+    </View>
+
+    {/* Categories Section */}
+
+   <Categories/>
+    
+
     </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex:1,
+    padding: 20
   },
   textOne : {
-    fontSize: 28,
+    fontSize: 22,
     color: "#000000",
-    marginTop: 20
+    marginTop: 20,
+    marginLeft:30
   },
   inputContainer :{
     backgroundColor: '#FFFFFF',
@@ -40,7 +53,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     marginVertical: 20,
-    marginHorizontal: 20
+    marginHorizontal: 30
   },
   icon : {
     marginHorizontal: 5

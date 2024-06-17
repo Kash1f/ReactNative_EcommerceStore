@@ -3,12 +3,20 @@ import React from "react";
 
 const Header = () => {
   return (
+    // main container
     <View style={styles.container}>
+      
+      {/* icon container with image*/}
       <View style={styles.appIconContainer}>
         <Image source={require("../assets/apps.png")} style={styles.appIcon} />
       </View>
 
-      <Image source={require("../assets/Ellipse2.png")} style={styles.profileIcon}/>
+      {/* display picture view */}
+      <View>
+        <Image
+          source={require("../assets/Ellipse2.png")}
+          style={styles.profileIcon}/>
+      </View>
     </View>
   );
 };
