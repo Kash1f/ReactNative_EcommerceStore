@@ -41,7 +41,7 @@ export default Tags;
 const styles = StyleSheet.create({
   tagText: {
     fontSize: 16,
-    fontFamily: "Poppins-Regular",
+    fontFamily: "sans-serif",
     borderRadius: 10,
     paddingHorizontal: 30,
     paddingVertical: 10,

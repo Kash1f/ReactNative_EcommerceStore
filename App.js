@@ -51,6 +51,7 @@ function App() {
           options={{
             tabBarIcon: ({ color }) => (
               <FontAwesome6 name="user-large" size={22} color={color}/>
+              
             ),
           }}
         />
